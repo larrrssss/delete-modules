@@ -1,0 +1,29 @@
+{
+  "name": "delete-modules",
+  "version": "1.0.0",
+  "description": "Node script to delete node_modules",
+  "main": "src/index.js",
+  "bin": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/larrrssss/delete-modules.git"
+  },
+  "keywords": [
+    "node_modules",
+    "delete"
+  ],
+  "author": "larrrssss",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/larrrssss/delete-modules/issues"
+  },
+  "homepage": "https://github.com/larrrssss/delete-modules#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "inquirer": "^8.1.2",
+    "rimraf": "^3.0.2"
+  }
+}
