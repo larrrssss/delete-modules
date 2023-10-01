@@ -10,8 +10,12 @@ function deleteDir(p) {
 }
 
 function isDir(p) {
-  const stats = fs.statSync(p);
-  return stats.isDirectory();
+  try {
+    const stats = fs.statSync(p);
+    return stats.isDirectory();
+  } catch (e) {
+    return false;
+  }
 }
 
 async function deleteNodeModules(p, deep) {
@@ -23,7 +27,7 @@ async function deleteNodeModules(p, deep) {
 
     if (f === 'node_modules') {
       console.log(colors.yellow(`${'🗑️'} Deleting: ${np}`));
-      await deleteDir(np);
+      await deleteDir(np).catch(() => {});
     } else if (deep) {
       await deleteNodeModules(np, deep);
     }
